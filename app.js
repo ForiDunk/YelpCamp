@@ -25,7 +25,7 @@ mongoose.Promise = global.Promise;
 
 const databaseUri = process.env.MONGODB_URI || 'mongodb://localhost/yelp_camp';
 
-mongoose.connect(databaseUri, { useMongoClient: true })
+mongoose.connect("mongodb://Szabolcs.Forreiter:1910403142614Fori@ds139122.mlab.com:39122/fori_yelpcamp", { useMongoClient: true })
       .then(() => console.log(`Database connected`))
       .catch(err => console.log(`Database connection error: ${err.message}`));
 
