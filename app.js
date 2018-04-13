@@ -1,16 +1,16 @@
-var express     = require("express"),
-    app         = express(),
-    bodyParser  = require("body-parser"),
-    mongoose    = require("mongoose"),
-    passport    = require("passport"),
-    cookieParser = require("cookie-parser"),
-    LocalStrategy = require("passport-local"),
-    flash        = require("connect-flash"),
-    Campground  = require("./models/campground"),
-    Comment     = require("./models/comment"),
-    User        = require("./models/user"),
-    session = require("express-session"),
-    seedDB      = require("./seeds"),
+var express        = require("express"),
+    app            = express(),
+    bodyParser     = require("body-parser"),
+    mongoose       = require("mongoose"),
+    passport       = require("passport"),
+    cookieParser   = require("cookie-parser"),
+    LocalStrategy  = require("passport-local"),
+    flash          = require("connect-flash"),
+    Campground     = require("./models/campground"),
+    Comment        = require("./models/comment"),
+    User           = require("./models/user"),
+    session        = require("express-session"),
+    seedDB         = require("./seeds"),
     methodOverride = require("method-override");
 // configure dotenv
 require('dotenv').load();
@@ -19,10 +19,15 @@ require('dotenv').load();
 var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes      = require("./routes/index");
+
+console.log(process.env.DATABASEURL);
     
-// mongoose.connect("mongodb://localhost/yelp_camp_profiles");
+mongoose.connect(process.env.DATABASEURL);
 // mongodb://Szabolcs.Forreiter:1910403142614Fori@ds139122.mlab.com:39122/fori_yelpcamp
-mongoose.connect("mongodb://Szabolcs.Forreiter:1910403142614Fori@ds139122.mlab.com:39122/fori_yelpcamp");
+// mongoose.connect("mongodb://Szabolcs.Forreiter:1910403142614Fori@ds139122.mlab.com:39122/fori_yelpcamp");
+
+
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
