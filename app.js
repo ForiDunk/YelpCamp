@@ -22,7 +22,8 @@ var commentRoutes    = require("./routes/comments"),
 
 console.log(process.env.DATABASEURL);
     
-mongoose.connect(process.env.DATABASEURL);
+var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_profiles";
+mongoose.connect(url);
 // mongodb://Szabolcs.Forreiter:1910403142614Fori@ds139122.mlab.com:39122/fori_yelpcamp
 // mongoose.connect("mongodb://Szabolcs.Forreiter:1910403142614Fori@ds139122.mlab.com:39122/fori_yelpcamp");
 
