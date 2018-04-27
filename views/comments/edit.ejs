@@ -1,7 +1,7 @@
 <% include ../partials/header %>
-<h1 style="text-align: center">Edit Comment</h1>
-    <div class="row">
-        <div style="width: 30%; margin: 25px auto;">
+<h1 class="deep-orange-text" style="text-align: center">Edit Comment</h1>
+    <div class="row d-flex justify-content-center deep-orange-text">
+        <div class="col-md-6 col-sm-8 col-12">
             <form class="md-form" action="/campgrounds/<%= campground_id %>/comments/<%=comment._id %>?_method=PUT" method="POST">
                 <div class="form-group">
                     <i class="fa fa-pencil prefix"></i>
