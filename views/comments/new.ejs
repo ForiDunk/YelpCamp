@@ -1,13 +1,15 @@
 <% include ../partials/header %>
+<h1 style="text-align: center">Add New Comment to <%= campground.name %></h1>
     <div class="row">
-        <h1 style="text-align: center">Add New Comment to <%= campground.name %></h1>
         <div style="width: 30%; margin: 25px auto;">
-            <form action="/campgrounds/<%= campground._id %>/comments" method="POST">
+            <form class="md-form" action="/campgrounds/<%= campground._id %>/comments" method="POST">
                 <div class="form-group">
-                    <input class="form-control" type="text" name="comment[text]" placeholder="text">
+                    <i class="fa fa-pencil prefix"></i>
+                    <textarea type="text" id="textareaPrefix" class="form-control md-textarea" name="comment[text]" rows="3"></textarea>
+                    <label for="textareaPrefix">Icon Prefix</label>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-lg btn-deep-orange btn-block">Submit!</button>
+                    <button class="btn btn-lg btn-outline-deep-orange">Add Comment</button>
                 </div>
             </form>
             <a class="deep-orange-text" href="/campgrounds">Go Back</a>

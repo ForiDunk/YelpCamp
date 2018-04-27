@@ -1,19 +1,25 @@
 <% include ./partials/header %>
-    <div class="row">
-        <h1 style="text-align: center">Sign Up</h1>
-        <div style="width: 30%; margin: 25px auto;">
-            <form action="/register" method="post">
-                <div class="form-group">
-                    <input class="form-control" type="text" name="username" placeholder="username">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="password" name="password" placeholder="password">
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-lg btn-outline-deep-orange btn-block">Sign Up!</button>
-                </div>
-            </form>
-            <a class="deep-orange-text" href="/campgrounds">Go Back</a>
+<div class="row d-flex justify-content-center"> 
+    <form action="/register" method="post">
+        
+        <p class="h4 text-center mb-4">Sign Up</p>
+            
+        <!-- Material input text -->
+        <div class="md-form">
+            <i class="fa fa-user prefix grey-text"></i>
+            <input type="text" name="username" placeholder="Your name" class="form-control">
         </div>
-    </div>
+    
+        <!-- Material input password -->
+        <div class="md-form">
+            <i class="fa fa-lock prefix grey-text"></i>
+            <input type="password" name="password" placeholder="Your password" class="form-control">
+        </div>
+    
+        <div class="text-center mt-4">
+            <button class="btn btn-outline-deep-orange" type="submit">Sign Up!</button>
+        </div>
+    </form>
+</div>
+<!-- Material form login -->
 <% include ./partials/footer %>
