@@ -8,20 +8,6 @@ header {
 }
 
 
-
-/* Thumbnail styles */
-.thumbnail img {
-    width: 100%;
-}
-
-.thumbnail {
-    padding: 0;
-}
-
-.thumbnail .caption-full {
-    padding: 9px;
-}
-
 /* Google Map styles */
 #map {
 	height: 400px;

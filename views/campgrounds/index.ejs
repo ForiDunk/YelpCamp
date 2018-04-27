@@ -1,9 +1,8 @@
 <% include ../partials/header %> 
-
-     <header class="jumbotron">
+     <header class="jumbotron animated rollIn">
          <div class="container">
-             <h1><span class="glyphicon glyphicon-tent"></span> Welcome To YelpCamp!</h1>
-             <p>View our hand-picked campgrounds from all over the world</p>
+             <h1 class="h1-reponsive mb-4 mt-2 blue-text font-bold">Welcome To YelpCamp!</h1>
+             <p class="lead">View our hand-picked campgrounds from all over the world</p>
              <p>
                 <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Campground</a>
              </p>
@@ -18,19 +17,30 @@
      </header>
      
      <div class="row text-center flex-wrap" id="campground-grid">
-        <% campgrounds.forEach(function(campground){ %>
+         
+            <% campgrounds.forEach(function(campground){ %>
             <div class="col-md-3 col-sm-6">
-                <div class="thumbnail">
-                   <img src="<%= campground.image %>">
-                   <div class="caption">
-                       <h4><%= campground.name %></h4>
-                   </div>
-                   <p>
-                       <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
-                   </p>
+            <!-- Card -->
+                <div class="card animated zoomInDown">
+                    <div class="view overlay">
+                        <!-- Card image -->
+                        <img class="card-img-top" src="<%= campground.image %>">
+                        <a href="/campgrounds/<%= campground._id %>">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    <!-- Card content -->
+                    <div class="card-body">
+                        <!-- Title -->
+                        <h4 class="card-title"><%= campground.name %></h4>
+                        <hr>
+                        <!-- Link -->
+                        <a href="/campgrounds/<%= campground._id %>" class="black-text d-flex justify-content-end"><h5>Read more <i class="fa fa-angle-double-right"></i></h5></a>
+                    </div>
                 </div>
-            </div>
+             </div>
         <% }); %>
-    </div>
+     </div>
+</div>
 
 <% include ../partials/footer %>
