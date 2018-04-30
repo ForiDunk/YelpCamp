@@ -1,13 +1,13 @@
 <% include ../partials/header %>
-<div class="row deep-orange-text">
+<div class="row mt-2">
   <div class="col-md-3">
     <p class="lead">YelpCamp</p>
     <div id="map"></div>
   </div>
-  <div class="col-md-9">
+  <div class="col-md-9 ">
     <div class="thumbnail">
       <img class="img-fluid mh-100 mw-100" src="<%= campground.image %>">
-      <div class="caption-full">
+      <div class="caption-full bg-white z-depth-2 p-2 mt-2">
         <h4 class="pull-right">
           $<%= campground.cost %>/night
         </h4>
@@ -24,7 +24,7 @@
         <% } %>
       </div>
     </div>
-    <div class="well">
+    <div class="well bg-white z-depth-2 p-2">
       <div class="text-right">
         <a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
       </div>
